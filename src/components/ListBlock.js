@@ -3,7 +3,7 @@ import "./ListBlock.css";
 
 const ListBlock = ({ array, compare, swap, sorted }) => {
   const bars = array.map((value, index) => {
-    let color = "#00b4d8";
+    let color = "#0061e1";
 
     if (compare && (index === compare[0] || index === compare[1])) {
       color = "#fb8500";
@@ -14,15 +14,17 @@ const ListBlock = ({ array, compare, swap, sorted }) => {
     }
 
     if (sorted && sorted.includes(index)) {
-      color = "#90be6d";
+      color = "#4bc52e";
     }
 
     return (
       <div
         className="array-bar"
         key={index}
-        style={{ height: `${value}px`, backgroundColor: `${color}` }}
-      ></div>
+        style={{ height: `${value * 3}px`, backgroundColor: `${color}` }}
+      >
+        {value}
+      </div>
     );
   });
   return <div className="bar-container">{bars}</div>;

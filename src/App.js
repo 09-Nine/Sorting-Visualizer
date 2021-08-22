@@ -13,10 +13,11 @@ const App = () => {
 
   const resetArray = () => {
     const arr = [];
-    for (let i = 0; i <= 200; i++) {
-      arr.push(getRandomInt(5, 500));
+    for (let i = 0; i <= 50; i++) {
+      arr.push(getRandomInt(5, 100));
     }
     setArray(arr);
+    setSorted([]);
   };
 
   useEffect(() => {
@@ -28,18 +29,18 @@ const App = () => {
       for (let i = 0; i < orders.length; i++) {
         setTimeout(() => {
           const [j, k, arr, index] = orders[i];
-          setCompare(j, k);
+          setCompare([j, k]);
           setSwap([]);
 
-          if (index) {
+          if (index !== null) {
             setSorted((prev) => [...prev, index]);
           }
 
           if (arr) {
             setArray(arr);
-            setSwap(j, k);
+            setSwap([j, k]);
           }
-        }, 250);
+        }, 400);
       }
     };
     algoSort(selectionSort(array));
@@ -47,7 +48,7 @@ const App = () => {
 
   return (
     <div>
-      <Navbar handleSort={handleSort} />
+      <Navbar handleSort={handleSort} resetArray={resetArray} />
       <ListBlock array={array} compare={compare} swap={swap} sorted={sorted} />
       <Legends />
     </div>
