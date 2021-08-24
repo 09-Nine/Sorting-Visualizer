@@ -4,6 +4,7 @@ import Legends from "./components/Legends";
 import Navbar from "./components/Navbar";
 
 import selectionSort from "./algorithms/selectionSort";
+import bubbleSort from "./algorithms/bubbleSort";
 
 const App = () => {
   const [array, setArray] = useState([]);
@@ -24,23 +25,41 @@ const App = () => {
     resetArray();
   }, []);
 
+  const sleep = (ms) => {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+  };
+
   const handleSort = () => {
-    const algoSort = (orders) => {
+    const algoSort = async (orders) => {
       for (let i = 0; i < orders.length; i++) {
-        setTimeout(() => {
-          const [j, k, arr, index] = orders[i];
-          setCompare([j, k]);
-          setSwap([]);
+        const [j, k, arr, index] = orders[i];
+        setCompare([j, k]);
+        setSwap([]);
+        if (index !== null) {
+          setSorted((prev) => [...prev, index]);
+        }
+        if (arr) {
+          setArray(arr);
+          setSwap([j, k]);
+        }
 
-          if (index !== null) {
-            setSorted((prev) => [...prev, index]);
-          }
+        await sleep(0);
+        // await new Promise(() => {
+        //   setTimeout(() => {
+        //     const [j, k, arr, index] = orders[i];
+        //     setCompare([j, k]);
+        //     setSwap([]);
 
-          if (arr) {
-            setArray(arr);
-            setSwap([j, k]);
-          }
-        }, 400);
+        //     if (index !== null) {
+        //       setSorted((prev) => [...prev, index]);
+        //     }
+
+        //     if (arr) {
+        //       setArray(arr);
+        //       setSwap([j, k]);
+        //     }
+        //   }, 0);
+        // });
       }
     };
     algoSort(selectionSort(array));

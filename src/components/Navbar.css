@@ -1,0 +1,119 @@
+.nav-bar {
+  box-shadow: 0px 2px 7px black;
+  display: flex;
+  padding: 30px;
+  background-color: #03071e27;
+  color: azure;
+  align-items: center;
+  justify-content: space-between;
+}
+
+h1 {
+  color: azure;
+  margin: 0;
+  font-size: 20px;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 80%;
+  height: 5px;
+  background: #000;
+  outline: none;
+  border: 2px solid lawngreen;
+  border-radius: 8px;
+  margin: 0;
+}
+
+/* for chrome/safari */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 8px;
+  height: 25px;
+  background: #000;
+  cursor: pointer;
+  border: 1px solid lawngreen;
+  border-radius: 4px;
+}
+
+button {
+  background: none;
+  color: lawngreen;
+  font-size: 15px;
+  border: 2px solid;
+  padding: 1em 3em;
+  border-radius: 22px;
+  transition: color 0.25s, border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+  text-transform: uppercase;
+  font-family: "Indie Flower", cursive;
+  margin: 0 10px;
+}
+
+button:hover {
+  color: seashell;
+  border-color: yellow;
+  cursor: pointer;
+  box-shadow: 0 0.5em 0.5em -0.4em yellow;
+  transform: translateY(-0.25em);
+}
+
+.input-container {
+  text-align: center;
+  margin: 0 15px;
+}
+
+label {
+  display: block;
+}
+
+select {
+  /* Reset Select */
+  appearance: none;
+  outline: 0;
+  border: 2px solid lawngreen;
+  box-shadow: none;
+  /* Personalize */
+  flex: 1;
+  padding: 0 1em;
+  color: #fff;
+  background-color: #000;
+  background-image: none;
+  cursor: pointer;
+}
+/* Remove IE arrow */
+select::-ms-expand {
+  display: none;
+}
+/* Custom Select wrapper */
+.select {
+  position: relative;
+  display: flex;
+  width: 12em;
+  height: 3em;
+  border-radius: 0.25em;
+  overflow: hidden;
+  margin: 0 10px;
+}
+/* Arrow */
+.select::after {
+  content: "\25BC";
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 13px;
+  background-color: #000;
+  transition: 0.25s all ease;
+  pointer-events: none;
+  border: 2px solid lawngreen;
+  border-bottom: 0;
+}
+/* Transition */
+.select:hover::after {
+  color: #f39c12;
+}
+
+.setting {
+  display: flex;
+  align-items: center;
+}
