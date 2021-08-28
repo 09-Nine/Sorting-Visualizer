@@ -14,14 +14,14 @@ const ListBlock = ({ array, compare, swap, sorted }) => {
     }
 
     if (sorted && sorted.includes(index)) {
-      color = "#a1ff0a";
+      color = "#be0aff";
     }
 
     return (
       <div
         className="array-bar"
         key={index}
-        style={{ height: `${value * 3}px`, borderColor: `${color}` }}
+        style={{ height: `${value * 4}px`, borderColor: `${color}` }}
       ></div>
     );
   });

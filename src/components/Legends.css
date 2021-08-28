@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin: 60px 120px 0 120px;
+}
+
+.box {
+  width: 30px;
+  height: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5px;
+}
+
+.compare {
+  /* border: 2px solid orange; */
+  background-color: orange;
+}
+
+.swap {
+  background-color: red;
+}
+
+.sorted {
+  background-color: #be0aff;
+}

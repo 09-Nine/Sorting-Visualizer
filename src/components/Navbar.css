@@ -1,11 +1,12 @@
 .nav-bar {
-  box-shadow: 0px 2px 7px black;
   display: flex;
   padding: 30px;
   background-color: #03071e27;
   color: azure;
   align-items: center;
   justify-content: space-between;
+  font-family: "Indie Flower", cursive;
+  margin-bottom: 25px;
 }
 
 h1 {
@@ -39,19 +40,20 @@ h1 {
 
 button {
   background: none;
-  color: lawngreen;
+  color: #fff;
   font-size: 15px;
-  border: 2px solid;
+  border: 2px solid lawngreen;
   padding: 1em 3em;
   border-radius: 22px;
   transition: color 0.25s, border-color 0.25s, box-shadow 0.25s, transform 0.25s;
   text-transform: uppercase;
   font-family: "Indie Flower", cursive;
-  margin: 0 10px;
+  margin: 0 15px;
+  font-weight: 550;
 }
 
 button:hover {
-  color: seashell;
+  color: #ffac81;
   border-color: yellow;
   cursor: pointer;
   box-shadow: 0 0.5em 0.5em -0.4em yellow;
@@ -80,6 +82,8 @@ select {
   background-color: #000;
   background-image: none;
   cursor: pointer;
+  font-family: "Indie Flower", cursive;
+  font-weight: 550;
 }
 /* Remove IE arrow */
 select::-ms-expand {
@@ -101,7 +105,7 @@ select::-ms-expand {
   position: absolute;
   top: 0;
   right: 0;
-  padding: 13px;
+  padding: 10.5px;
   background-color: #000;
   transition: 0.25s all ease;
   pointer-events: none;
@@ -110,7 +114,7 @@ select::-ms-expand {
 }
 /* Transition */
 .select:hover::after {
-  color: #f39c12;
+  color: #ffac81;
 }
 
 .setting {
