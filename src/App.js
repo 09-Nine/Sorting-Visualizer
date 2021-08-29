@@ -15,16 +15,16 @@ const App = () => {
   const [compare, setCompare] = useState([]);
   const [swap, setSwap] = useState([]);
   const [sorted, setSorted] = useState([]);
-  const [speed, setSpeed] = useState(0);
+  const [speed, setSpeed] = useState(1);
+  const [size, setSize] = useState(1);
   const [algo, setAlgo] = useState("selectionSort");
   const [isSorting, setIsSorting] = useState(false);
   const [isCompleted, setIsCompleted] = useState(false);
-  const [size, setSize] = useState(50);
 
-  const resetArray = () => {
+  const resetArray = (size) => {
     const arr = [];
-    for (let i = 0; i <= 50; i++) {
-      arr.push(getRandomInt(5, 2 * 50));
+    for (let i = 0; i <= size * 10; i++) {
+      arr.push(getRandomInt(5, 1.5 * 10 * size));
     }
     setArray(arr);
     setSorted([]);
@@ -35,8 +35,8 @@ const App = () => {
   };
 
   useEffect(() => {
-    resetArray();
-  }, [algo]);
+    resetArray(size);
+  }, [algo, size]);
 
   const sleep = (ms) => {
     return new Promise((resolve) => setTimeout(resolve, ms));
@@ -46,18 +46,18 @@ const App = () => {
     setIsSorting(true);
     const algoSort = async (orders) => {
       for (let i = 0; i < orders.length; i++) {
-        const [j, k, arr, index] = orders[i];
-        setCompare([j, k]);
+        const [sets, arr, index] = orders[i];
+        setCompare(sets);
         setSwap([]);
         if (index !== null) {
           setSorted((prev) => [...prev, index]);
         }
         if (arr) {
           setArray(arr);
-          setSwap([j, k]);
+          setSwap(sets);
         }
 
-        await sleep(speed * 50);
+        await sleep(Math.floor(150 / speed));
       }
       setIsSorting(false);
       setIsCompleted(true);
@@ -93,13 +93,15 @@ const App = () => {
         resetArray={resetArray}
         speed={speed}
         setSpeed={setSpeed}
+        size={size}
+        setSize={setSize}
         algo={algo}
         setAlgo={setAlgo}
         isCompleted={isCompleted}
         isSorting={isSorting}
       />
       <ListBlock array={array} compare={compare} swap={swap} sorted={sorted} />
-      <Legends />
+      <Legends algo={algo} />
     </div>
   );
 };

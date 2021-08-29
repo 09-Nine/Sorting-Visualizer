@@ -1,28 +1,38 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./ListBlock.css";
 
 const ListBlock = ({ array, compare, swap, sorted }) => {
   const bars = array.map((value, index) => {
-    let color = "#0aefff";
+    let bgColor = "#0aefff";
 
-    if (compare && (index === compare[0] || index === compare[1])) {
-      color = "orange";
+    if (compare && compare.includes(index)) {
+      bgColor = "orange";
     }
 
-    if (swap && (index === swap[0] || index === swap[1])) {
-      color = "red";
+    if (swap && swap.includes(index)) {
+      bgColor = "red";
     }
 
     if (sorted && sorted.includes(index)) {
-      color = "#be0aff";
+      bgColor = "#be0aff";
     }
 
+    const height = (value * 300) / array.length;
+    const width = 800 / array.length;
+    const fontSize = width / 2.5;
+
+    const style = {
+      background: bgColor,
+      // borderColor: bgColor,
+      height: `${height}px`,
+      width: `${width}px`,
+      fontSize: `${fontSize}px`,
+    };
+
     return (
-      <div
-        className="array-bar"
-        key={index}
-        style={{ height: `${value * 4}px`, borderColor: `${color}` }}
-      ></div>
+      <div className="array-bar" key={index} style={style}>
+        {width > 16 ? value : ""}
+      </div>
     );
   });
   return <div className="bar-container">{bars}</div>;

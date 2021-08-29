@@ -1,7 +1,7 @@
 import React from "react";
 import "./Legends.css";
 
-const Legends = () => {
+const Legends = ({ algo }) => {
   return (
     <div className="container">
       <div>
@@ -10,7 +10,7 @@ const Legends = () => {
       </div>
       <div>
         <div className="swap box"></div>
-        <h1>Swap</h1>
+        <h1>{algo !== "mergeSort" ? "Swap" : "Taking From Auxillary Array"}</h1>
       </div>
       <div>
         <div className="sorted box"></div>

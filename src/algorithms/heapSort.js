@@ -13,12 +13,12 @@ const heapSort = (arr) => {
 
   for (let k = n - 1; k > 0; k--) {
     swap(copy, k, 0);
-    orders.push([k, 0, copy.slice(), null]);
-    orders.push([null, null, null, k]);
+    orders.push([[k, 0], copy.slice(), null]);
+    orders.push([[null, null], null, k]);
     heapify(copy, k, 0);
   }
 
-  orders.push([null, null, null, 0]);
+  orders.push([[null, null], null, 0]);
 
   return orders;
 };
@@ -27,20 +27,19 @@ const heapify = (arr, len, index) => {
   let largest = index;
   const left = 2 * index + 1;
   const right = 2 * index + 2;
+  orders.push([[index, left, right], null, null]);
 
   if (left < len && arr[largest] < arr[left]) {
-    orders.push([left, largest, null, null]);
     largest = left;
   }
 
   if (right < len && arr[largest] < arr[right]) {
-    orders.push([right, largest, null, null]);
     largest = right;
   }
 
   if (largest !== index) {
     swap(arr, largest, index);
-    orders.push([largest, index, arr.slice(), null]);
+    orders.push([[largest, index], arr.slice(), null]);
 
     heapify(arr, len, largest);
   }

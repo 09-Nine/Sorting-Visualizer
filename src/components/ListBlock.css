@@ -1,13 +1,19 @@
 .array-bar {
   display: inline-block;
   margin: 0 1px;
-  width: 30px;
   border-radius: 3px;
-  border: 2px solid;
+  text-align: center;
+  color: #272640;
+  font-weight: 600;
+  /* border: 1px solid; */
+  transition-duration: 100ms;
+  transition-property: height;
+  transition-timing-function: ease-in;
 }
 
 .bar-container {
   display: flex;
   justify-content: center;
-  margin-top: 10px;
+  margin: 0px auto;
+  min-height: 450px;
 }

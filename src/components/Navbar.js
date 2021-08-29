@@ -6,6 +6,8 @@ const Navbar = ({
   resetArray,
   speed,
   setSpeed,
+  size,
+  setSize,
   algo,
   setAlgo,
   isCompleted,
@@ -19,8 +21,8 @@ const Navbar = ({
           <label>Speed</label>
           <input
             type="range"
-            min="0"
-            max="10"
+            min="1"
+            max="11"
             className="slider"
             value={speed}
             onChange={(evt) => setSpeed(evt.target.value)}
@@ -32,9 +34,12 @@ const Navbar = ({
           <label>Size</label>
           <input
             type="range"
-            min="0"
-            max="10"
+            min="1"
+            max="11"
             className="slider"
+            value={size}
+            onChange={(evt) => setSize(evt.target.value)}
+            step="1"
             disabled={isSorting}
           />
         </div>
@@ -54,7 +59,7 @@ const Navbar = ({
           </select>
         </div>
 
-        <button onClick={resetArray} disabled={isSorting}>
+        <button onClick={() => resetArray(size)} disabled={isSorting}>
           Reset
         </button>
         <button onClick={handleSort} disabled={isSorting || isCompleted}>

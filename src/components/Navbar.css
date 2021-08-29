@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: space-between;
   font-family: "Indie Flower", cursive;
-  margin-bottom: 25px;
+  margin-bottom: 10px;
 }
 
 h1 {
@@ -110,7 +110,7 @@ select::-ms-expand {
   transition: 0.25s all ease;
   pointer-events: none;
   border: 2px solid lawngreen;
-  border-bottom: 0;
+  /* border-bottom: 0; */
 }
 /* Transition */
 .select:hover::after {
