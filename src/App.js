@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import ListBlock from "./components/ListBlock";
-import Legends from "./components/Legends";
-import Navbar from "./components/Navbar";
+import ListBlock from "./components/ListBlock/ListBlock";
+import Legends from "./components/Legends/Legends";
+import Navbar from "./components/Navbar/Navbar";
 
 import selectionSort from "./algorithms/selectionSort";
 import bubbleSort from "./algorithms/bubbleSort";

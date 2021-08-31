@@ -4,9 +4,15 @@
   margin: 25px 120px 0 120px;
 }
 
+.container h1 {
+  margin: 0;
+  font-size: 1.5vw;
+  color: azure;
+}
+
 .box {
-  width: 30px;
-  height: 30px;
+  width: 3vw;
+  height: 3vw;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 5px;

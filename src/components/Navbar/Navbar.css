@@ -6,20 +6,22 @@
   align-items: center;
   justify-content: space-between;
   font-family: "Indie Flower", cursive;
-  margin-bottom: 10px;
+  margin-bottom: 2vh;
+  box-shadow: 0px 2px 7px black;
 }
 
-h1 {
+.nav-bar h1 {
   color: azure;
   margin: 0;
-  font-size: 20px;
+  font-size: 2vw;
+  font-weight: 100;
 }
 
 .slider {
   -webkit-appearance: none;
-  width: 80%;
-  height: 5px;
-  background: #000;
+  width: 8vw;
+  height: 0.4vw;
+  background: transparent;
   outline: none;
   border: 2px solid lawngreen;
   border-radius: 8px;
@@ -30,26 +32,26 @@ h1 {
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 8px;
-  height: 25px;
-  background: #000;
+  width: 0.6vw;
+  height: 2vw;
+  background: #03071e;
   cursor: pointer;
-  border: 1px solid lawngreen;
+  border: 2px solid lawngreen;
   border-radius: 4px;
 }
 
 button {
   background: none;
   color: #fff;
-  font-size: 15px;
   border: 2px solid lawngreen;
   padding: 1em 3em;
   border-radius: 22px;
   transition: color 0.25s, border-color 0.25s, box-shadow 0.25s, transform 0.25s;
   text-transform: uppercase;
   font-family: "Indie Flower", cursive;
-  margin: 0 15px;
+  margin: 0 1vw;
   font-weight: 550;
+  font-size: 1vw;
 }
 
 button:hover {
@@ -62,7 +64,8 @@ button:hover {
 
 .input-container {
   text-align: center;
-  margin: 0 15px;
+  margin: 0 1vw;
+  font-size: 1.2vw;
 }
 
 label {
@@ -73,18 +76,27 @@ select {
   /* Reset Select */
   appearance: none;
   outline: 0;
-  border: 2px solid lawngreen;
+  border: 0;
+  border-bottom: 2px solid lawngreen;
   box-shadow: none;
   /* Personalize */
   flex: 1;
   padding: 0 1em;
   color: #fff;
-  background-color: #000;
+  background-color: #03071e27;
   background-image: none;
   cursor: pointer;
   font-family: "Indie Flower", cursive;
   font-weight: 550;
+  font-size: 1vw;
+  padding: 0 1.5em;
+  border-radius: 10px;
 }
+
+select option {
+  background-color: #03071e87;
+}
+
 /* Remove IE arrow */
 select::-ms-expand {
   display: none;
@@ -93,24 +105,26 @@ select::-ms-expand {
 .select {
   position: relative;
   display: flex;
-  width: 12em;
-  height: 3em;
+  width: 18vw;
+  height: 4vw;
   border-radius: 0.25em;
   overflow: hidden;
-  margin: 0 10px;
+  margin: 0 1vw;
 }
 /* Arrow */
 .select::after {
   content: "\25BC";
   position: absolute;
-  top: 0;
-  right: 0;
-  padding: 10.5px;
-  background-color: #000;
-  transition: 0.25s all ease;
+  right: 0.7em;
+  top: 0.6em;
+  /* padding: 0.54em; */
+  background-color: transparent;
   pointer-events: none;
-  border: 2px solid lawngreen;
-  /* border-bottom: 0; */
+  /* border: 2px solid lawngreen; */
+  font-size: 1.5vw;
+  transition-duration: 0.25s;
+  transition-property: color;
+  transition-timing-function: all ease;
 }
 /* Transition */
 .select:hover::after {

@@ -1,7 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./ListBlock.css";
 
 const ListBlock = ({ array, compare, swap, sorted }) => {
+  const width = 60 / array.length;
+  const fontSize = width / 2.5;
+
   const bars = array.map((value, index) => {
     let bgColor = "#0aefff";
 
@@ -18,20 +21,19 @@ const ListBlock = ({ array, compare, swap, sorted }) => {
     }
 
     const height = (value * 300) / array.length;
-    const width = 800 / array.length;
-    const fontSize = width / 2.5;
 
     const style = {
       background: bgColor,
       // borderColor: bgColor,
       height: `${height}px`,
-      width: `${width}px`,
-      fontSize: `${fontSize}px`,
+      width: `${width}vw`,
+      fontSize: `${fontSize}vw`,
     };
+    // console.log(width);
 
     return (
       <div className="array-bar" key={index} style={style}>
-        {width > 16 ? value : ""}
+        {width >= 1.2 ? value : ""}
       </div>
     );
   });

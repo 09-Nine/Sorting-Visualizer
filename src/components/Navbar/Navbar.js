@@ -22,7 +22,7 @@ const Navbar = ({
           <input
             type="range"
             min="1"
-            max="11"
+            max="10"
             className="slider"
             value={speed}
             onChange={(evt) => setSpeed(evt.target.value)}
@@ -35,7 +35,7 @@ const Navbar = ({
           <input
             type="range"
             min="1"
-            max="11"
+            max="10"
             className="slider"
             value={size}
             onChange={(evt) => setSize(evt.target.value)}
