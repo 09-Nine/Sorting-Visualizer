@@ -10,7 +10,7 @@ The app is deployed with Netlify on https://nine-sorting-visualizer.netlify.app/
 
 ```sh
 git clone https://github.com/09-Nine/Sorting-Visualizer.git
-cd Sorting-visualizer
+cd Sorting-Visualizer
 npm i
 ```
 
